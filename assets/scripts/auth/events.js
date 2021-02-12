@@ -1,6 +1,7 @@
 const api = require('./api')
 // require the ui file, so we can update the dom after an API request
 const ui = require('./ui')
+const store = require('../store')
 // require the get form fields function
 const getFormFields = require('../../../lib/get-form-fields')
 
@@ -28,9 +29,18 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
 const onSignOut = function (event) {
   event.preventDefault()
-  api.signOut(user.userToken)
+  api.signOut(store.user)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
@@ -38,6 +48,6 @@ const onSignOut = function (event) {
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut
-  // onChangePassword
+  onSignOut,
+  onChangePassword
 }
