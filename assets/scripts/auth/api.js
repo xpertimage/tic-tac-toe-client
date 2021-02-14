@@ -1,8 +1,5 @@
 const config = require('./../config')
 const store = require('./../store')
-// Set the HTTP header so that it always
-// contains the Authorization token for
-// all server HTTP request in this session
 
 const signUp = function (data) {
   return $.ajax({
@@ -24,7 +21,10 @@ const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
+    // Include the old and new passwords
     data: data,
+    // Include the token received upon sign-in as
+    // authorization
     headers: {
       Authorization: 'Bearer ' + store.user.user.token
     }
@@ -35,7 +35,11 @@ const signOut = function () {
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/sign-out',
-    data: {}
+    // Include the token received upon sign-in as
+    // authorization
+    headers: {
+      Authorization: 'Bearer ' + store.user.user.token
+    }
   })
 }
 
