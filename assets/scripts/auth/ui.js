@@ -13,13 +13,10 @@ const signInSuccess = function (response) {
   // store the HTTP response from the server in the 'user'
   // variable. The token will be used in any other HTTP
   // requests during this session.
-
-  // After a succesful sign-in set the HTTP header in ajax
-  // to contain the user token for all other HTTP communications
-  // $.ajaxSetup({
-  //   headers: { Authorization: 'Bearer ' + response.user.token }
-  // })
+  $('#change-password').css('visibility', 'visible')
+  $('#sign-out').css('visibility', 'visible')
   store.user = response
+  // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')
   $('#sign-in').trigger('reset')
 }
@@ -37,6 +34,8 @@ const changePasswordFailure = function (response) {
 }
 
 const signOutSuccess = function (response) {
+  $('#change-password').css('visibility', 'hidden')
+  $('#sign-out').css('visibility', 'hidden')
   $('#error-message').text('Thanks for playing. You are now signed out')
 }
 
