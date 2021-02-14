@@ -24,19 +24,19 @@
       <form id="sign-in">
         <input name="credentials[email]" type="text" placeholder="an@example.email" required>
         <input name="credentials[password]" type="password" placeholder="an example password" required>
-        <button>Submit</button>
-        <div id="error-message"></div>
+        <button type='submit'>Submit</button>
       </form>
 
       <form id="change-password">
-        <input old-password="passwords[old]" type="password" placeholder="old password" required>
-        <input new-password="passwords[new]" type="password" placeholder="new password" required>
-        <button>Submit</button>
+        <input name="passwords[old]" type="password" placeholder="old password" required>
+        <input name="passwords[new]" type="password" placeholder="new password" required>
+        <button type='submit'>Submit</button>
       </form>
 
 
       <button id="sign-out">Sign Out</button>
 
+      <div id="error-message"></div>
 
     </section>
 

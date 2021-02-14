@@ -16,11 +16,10 @@ const signInSuccess = function (response) {
 
   // After a succesful sign-in set the HTTP header in ajax
   // to contain the user token for all other HTTP communications
-  $.ajaxSetup({
-    headers: { Authorization: 'Bearer ' + response.user.token }
-  })
+  // $.ajaxSetup({
+  //   headers: { Authorization: 'Bearer ' + response.user.token }
+  // })
   store.user = response
-  console.log(store.user)
   $('#error-message').text('Thank you for signing in')
   $('#sign-in').trigger('reset')
 }

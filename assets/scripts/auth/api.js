@@ -1,14 +1,8 @@
 const config = require('./../config')
+const store = require('./../store')
 // Set the HTTP header so that it always
 // contains the Authorization token for
 // all server HTTP request in this session
-// const headerSetup = function () {
-//   return $.ajaxSetup({
-//     beforeSend: function (xhr) {
-//       xhr.setRequestHeader('Authorization', 'Bearer t-', store.user.token)
-//     }
-//   })
-// }
 
 const signUp = function (data) {
   return $.ajax({
@@ -30,7 +24,10 @@ const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
-    data: data
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.user.token
+    }
   })
 }
 
