@@ -1,7 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
+
 #change-password {
-  visibility: hidden
+  visibility: hidden;
 }
+
 #sign-out {
-  visibility: hidden
+  visibility: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  align-content: center;
+}
+
+.col-3 {
+  background-color: red;
+  font-size: 50px;
+  height: 100px;
+  text-align: center;
 }

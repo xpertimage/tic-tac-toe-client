@@ -1,0 +1,12 @@
+Running "webpack-dev-server:start" (webpack-dev-server) task
+Project is running at [1m[34mhttp://localhost:7165/[39m[22m
+webpack output is served from [1m[34m/public/[39m[22m
+Content not from webpack is served from [1m[34m/home/ken/sei/projects/project1/tic-tac-toe-client/[39m[22m
+webpack: Failed to compile.
+
+
+Execution Time (2021-02-16 16:19:22 UTC-6)
+loading tasks                3s  ▇▇▇▇ 10%
+webpack-dev-server:start  26.1s  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 90%
+Total 29.1s
+
