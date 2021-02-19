@@ -17,5 +17,5 @@ $(() => {
   $('#start-game').on('click', gameEvents.onStartGame)
 
   // Code below to handle clicking on the game board
-  $('#0').on('click', gameEvents.onSquareClick)
+  $('.container').on('click', gameEvents.onSquareClick)
 })
