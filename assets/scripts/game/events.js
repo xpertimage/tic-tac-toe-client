@@ -3,11 +3,11 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 
-const squareClick = function (event) {
+const onSquareClick = function (event) {
   event.preventDefault()
-  console.log('SquareClick - Event=' , event)
+  // console.log('SquareClick - Event=', event)
   // send data to api for sign up
-  // api.signUp(data)
+  api.squareClick(event)
   //   .then(ui.signUpSuccess)
   //   .catch(ui.signUpFailure)
 }
@@ -15,9 +15,12 @@ const onStartGame = function (event) {
   event.preventDefault()
   console.log('Start Game Button')
   $('.container').css('visibility', 'visible')
+  api.startGame(event)
+    .then(ui.startGameSuccess)
+    .catch(ui.startGameFailure)
 }
 
 module.exports = {
-  squareClick,
+  onSquareClick,
   onStartGame
 }
