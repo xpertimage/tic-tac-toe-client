@@ -15,7 +15,9 @@ const signInSuccess = function (response) {
   // requests during this session.
   $('#change-password').css('visibility', 'visible')
   $('#sign-out').css('visibility', 'visible')
-  $('.container').css('visibility', 'visible')
+  $('#start-game').css('visibility', 'visible')
+  $('#sign-in').css('visibility', 'hidden')
+  $('#sign-up').css('visibility', 'hidden')//$('.container').css('visibility', 'visible')
   store.user = response
   // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')

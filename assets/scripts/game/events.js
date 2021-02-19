@@ -11,6 +11,13 @@ const squareClick = function (event) {
   //   .then(ui.signUpSuccess)
   //   .catch(ui.signUpFailure)
 }
+const onStartGame = function (event) {
+  event.preventDefault()
+  console.log('Start Game Button')
+  $('.container').css('visibility', 'visible')
+}
+
 module.exports = {
-  squareClick
+  squareClick,
+  onStartGame
 }
