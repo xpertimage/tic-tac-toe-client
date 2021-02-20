@@ -3,7 +3,13 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
 // Boolean variable used as a flag to switch between 'X' and 'O'
-let xORo = true
+let whosTurn = 'X'
+
+// const checkForWinner = function (arg) {
+//   store.game.cells.forEach(element) {
+//   if (element === arg) {}
+// }
+// }
 
 const onSquareClick = function (event) {
   event.preventDefault()
@@ -11,19 +17,16 @@ const onSquareClick = function (event) {
   // If the button/ square clicked has no text then place the appropriate
   // mark in the square
   if ($(event.target).text() === '') {
-    if (xORo) {
-      $(event.target).text('X')
-      xORo = false
-    } else {
-      $(event.target).text('O')
-      xORo = true
-    }
-  }
-  api.squareClick(event)
-  event.target.disabled = true
+    $(event.target).text(whosTurn)
+    // Add the appropriate mark (X or O) to the correct index
+    // in the Game Cells array.
+    store.game.cells[event.target.id] = whosTurn
+    // Alternate between 'X' and 'O'
+    if (whosTurn === 'X') { whosTurn = 'O' } else { whosTurn = 'X' }
+    // console.log(store.game.cells)
 
-  //   .then(ui.signUpSuccess)
-  //   .catch(ui.signUpFailure)
+  }
+
 }
 const onStartGame = function (event) {
   event.preventDefault()
