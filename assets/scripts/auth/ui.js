@@ -1,11 +1,14 @@
 const store = require('../store')
+const display = require('../forms')
 const signUpSuccess = function (response) {
   $('#error-message').text('Thank you for signing up')
   $('#sign-up').trigger('reset')
+  display.form3()
 }
 
 const signUpFailure = function (response) {
   $('#error-message').text('Sign up failed, try again')
+  $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (response) {
@@ -13,12 +16,7 @@ const signInSuccess = function (response) {
   // store the HTTP response from the server in the 'user'
   // variable. The token will be used in any other HTTP
   // requests during this session.
-  $('#change-password').css('visibility', 'visible')
-  $('#sign-out').css('visibility', 'visible')
-  $('#start-game').css('visibility', 'visible')
-  $('#sign-in').css('visibility', 'hidden')
-  $('#sign-up').css('visibility', 'hidden')
-  // $('.container').css('visibility', 'visible')
+  display.form4()
   store.user = response
   // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')

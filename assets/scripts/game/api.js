@@ -13,6 +13,29 @@ const squareClick = function (data) {
     }
   })
 }
+
+const updateGame = function (index, value, over) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games/' + store.game._id,
+    data: {
+          "game":
+              {
+              "cell": {
+                "index": index,
+                "value": value
+            },
+            "over": over
+          }
+        },
+    // Include the token received upon sign-in as
+    // authorization
+    headers: {
+      Authorization: 'Bearer ' + store.user.user.token
+    }
+  })
+}
+
 const startGame = function (data) {
   return $.ajax({
     method: 'POST',
@@ -27,5 +50,6 @@ const startGame = function (data) {
 }
 module.exports = {
   startGame,
+  updateGame,
   squareClick
 }

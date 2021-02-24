@@ -1,24 +1,40 @@
 @import '~bootstrap/scss/bootstrap';
 
-#change-password {
-  visibility: hidden;
+#settings {
+  text-align: center;
 }
 
 #sign-out {
-  visibility: hidden;
+  text-align: center;
 }
 
 #start-game {
-  visibility: hidden;
+  text-align: center;
 }
 
 h1 {
   text-align: center;
 }
 
+h3 {
+  text-align: center;
+}
+
+#form1 {
+  text-align: center;
+}
+
+#sign-up {
+  text-align: center;
+}
+
+#sign-in {
+  text-align: center;
+}
+
 .container {
   align-content: center;
-  visibility: hidden;
+  // visibility: hidden;
 }
 
 .col-3 {
