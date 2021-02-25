@@ -1,10 +1,10 @@
 const store = require('../store')
+const display = require('../forms')
 
 const startGameSuccess = function (response) {
   $('#error-message').text('Let the games begin!')
   store.game = response.game
-  $('.container').css('visibility', 'visible')
-  console.log(store.game)
+  display.form4a()
 }
 
 const startGameFailure = function (response) {
@@ -14,8 +14,7 @@ const startGameFailure = function (response) {
 const updateGameSuccess = function (response) {
   $('#error-message').text('Game stored on server successfully!')
   store.game = response.game
-  console.log('This is the response in update', response)
-  $('.container').css('visibility', 'visible')
+//  $('.container').css('visibility', 'visible')
 }
 
 const updateGameFailure = function (response) {

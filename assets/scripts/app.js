@@ -18,6 +18,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#start-game').on('click', gameEvents.onStartGame)
+  $('#settings').on('click', authEvents.onSettings)
 
   // Code below to handle clicking on the game board
   $('.container').on('click', gameEvents.onSquareClick)

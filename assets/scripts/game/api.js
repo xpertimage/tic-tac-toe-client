@@ -9,7 +9,7 @@ const squareClick = function (data) {
     // Include the token received upon sign-in as
     // authorization
     headers: {
-      Authorization: 'Bearer ' + store.user.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -19,19 +19,19 @@ const updateGame = function (index, value, over) {
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,
     data: {
-          "game":
-              {
-              "cell": {
-                "index": index,
-                "value": value
-            },
-            "over": over
-          }
+      game:
+      {
+        cell: {
+          index: index,
+          value: value
         },
+        over: over
+      }
+    },
     // Include the token received upon sign-in as
     // authorization
     headers: {
-      Authorization: 'Bearer ' + store.user.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -44,7 +44,7 @@ const startGame = function (data) {
     // Include the token received upon sign-in as
     // authorization
     headers: {
-      Authorization: 'Bearer ' + store.user.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }

@@ -11,6 +11,12 @@ const signUp = function (data) {
 
 const signIn = function (data) {
   return $.ajax({
+    beforeSend: function () {
+      $('.loader').css('visibility', 'visible')
+    },
+    complete: function () {
+      $('.loader').css('visibility', 'hidden')
+    },
     method: 'POST',
     url: config.apiUrl + '/sign-in',
     data: data
@@ -26,7 +32,7 @@ const changePassword = function (data) {
     // Include the token received upon sign-in as
     // authorization
     headers: {
-      Authorization: 'Bearer ' + store.user.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -38,7 +44,7 @@ const signOut = function () {
     // Include the token received upon sign-in as
     // authorization
     headers: {
-      Authorization: 'Bearer ' + store.user.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }

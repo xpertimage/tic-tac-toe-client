@@ -17,7 +17,8 @@ const signInSuccess = function (response) {
   // variable. The token will be used in any other HTTP
   // requests during this session.
   display.form4()
-  store.user = response
+  console.log(response.user)
+  store.user = response.user
   // Show the change-password form and the sign-out button
   $('#error-message').text('Thank you for signing in')
   $('#sign-in').trigger('reset')
@@ -36,8 +37,7 @@ const changePasswordFailure = function (response) {
 }
 
 const signOutSuccess = function (response) {
-  $('#change-password').css('visibility', 'hidden')
-  $('#sign-out').css('visibility', 'hidden')
+  display.form1()
   $('#error-message').text('Thanks for playing. You are now signed out')
 }
 
