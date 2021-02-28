@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Tic Tac Toe</h1>
+  <h3 id="error-message"></h3>
+    <!-- Loader Animation -->
+<div class="loader"></div>
+
+<div class="myButtons">
+  <button id="sign-out">Sign Out</button>
+  <button id="start-game">Start New Game</button>
+  <button id="settings">Settings</button>
+  <div class="backButton">
+    <button id="back">Back</button>
+  </div>
+  <button id="history">Game History</button>
+</div>
+
+  <section id="form1">
+    <button id="sign-in-button">Log In</button>
+    <button id="sign-up-button">New User</button>
+  </section>
+  <section id="auth-section">
+    <form id="sign-up">
+      <input name="credentials[email]" type="text" placeholder="an@example.email" required>
+      <input name="credentials[password]" type="password" placeholder="an example password" required>
+      <input name="credentials[password_confirmation]" type="password" placeholder="an example password">
+      <button>Sign Up</button>
+    </form>
+
+    <form id="sign-in">
+      <input name="credentials[email]" type="text" placeholder="an@example.email" required>
+      <input name="credentials[password]" type="password" placeholder="an example password" required>
+      <button type='submit'>Sign In</button>
+    </form>
+
+    <form id="change-password">
+      <input name="passwords[old]" type="password" placeholder="old password" required>
+      <input name="passwords[new]" type="password" placeholder="new password" required>
+      <button type='submit'>Change Password</button>
+    </form>
+
+
+
+  </section>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <button id="0" class="col-3 border-right border-bottom border-left-0 border-top-0 text-center"></button>
+      <button id="1" class="col-3 border-right border-bottom border-top-0 text-center"></button>
+      <button id="2" class="col-3 border-bottom border-top-0 border-right-0 text-center"></button>
+    </div>
+
+    <div class="row justify-content-center">
+      <button id="3" class="col-3 border-right border-bottom border-left-0 text-center"></button>
+      <button id="4" class="col-3 border-right border-bottom text-center"></button>
+      <button id="5" class="col-3 border-bottom border-right-0 text-center"></button>
+    </div>
+
+    <div class="row justify-content-center">
+      <button id="6" class="col-3 border-right border-left-0 border-bottom-0 text-center"></button>
+      <button id="7" class="col-3 border-right border-bottom-0 text-center"></button>
+      <button id="8" class="col-3 border-right-0 border-bottom-0 text-center"></button>
+    </div>
+  </div>
+  <h3 id="winner-message"></h3>
+
+  <div class="game-history"></div>
+
+</body>
+
+</html>
