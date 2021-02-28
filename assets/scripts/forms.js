@@ -52,10 +52,12 @@ const form5 = function () {
 }
 const form6 = function () {
   hideAll()
+  $('#sign-out').show()
   $('#sign-up').show()
 }
 const form7 = function () {
   hideAll()
+  $('#sign-out').show()
   $('#sign-up').show()
 }
 const form8 = function () {

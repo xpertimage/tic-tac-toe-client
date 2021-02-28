@@ -54,6 +54,7 @@ const onSettings = function (event) {
 
 const onBack = function () {
   $('.game-history').text('')
+  $('#error-message').text('')
   display.form4()
 }
 module.exports = {

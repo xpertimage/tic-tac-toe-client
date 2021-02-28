@@ -61,6 +61,11 @@ const checkForWinner = function (index, value) {
     $('#0,#1,#2,#3,#4,#5,#6,#7,#8').attr('disabled', 'disabled')
     onUpdateGame(index, whosTurn, true)
   } else {
+    if (store.totalMoves === 9 && winner === false) {
+      $('#winner-message').text('No Winner Game is a Draw!')
+      // Disable the game board buttons
+      $('#0,#1,#2,#3,#4,#5,#6,#7,#8').attr('disabled', 'disabled')
+    }
     onUpdateGame(index, whosTurn, false)
   }
 }
@@ -74,6 +79,7 @@ const onSquareClick = function (event) {
     // Add the appropriate mark (X or O) to the correct index
     // in the Game Cells array. Target.id represents the index
     store.game.cells[event.target.id] = whosTurn
+    store.totalMoves += 1
     checkForWinner(event.target.id, whosTurn)
     // Alternate between 'X' and 'O'
     if (whosTurn === 'X') { whosTurn = 'O' } else { whosTurn = 'X' }
@@ -81,6 +87,7 @@ const onSquareClick = function (event) {
 }
 const onStartGame = function (event) {
   whosTurn = 'X'
+  store.totalMoves = 0
   event.preventDefault()
   api.startGame(event)
     .then(ui.startGameSuccess)
