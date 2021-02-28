@@ -17,10 +17,12 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-  $('#start-game').on('click', gameEvents.onStartGame)
   $('#settings').on('click', authEvents.onSettings)
+  $('#back').on('click', authEvents.onBack)
 
   // Code below to handle clicking on the game board
+  $('#start-game').on('click', gameEvents.onStartGame)
   $('.container').on('click', gameEvents.onSquareClick)
+  $('#history').on('click', gameEvents.onHistory)
 })
 display.form1()

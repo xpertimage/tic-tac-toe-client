@@ -12,10 +12,10 @@ const signUp = function (data) {
 const signIn = function (data) {
   return $.ajax({
     beforeSend: function () {
-      $('.loader').css('visibility', 'visible')
+      $('.loader').show()
     },
     complete: function () {
-      $('.loader').css('visibility', 'hidden')
+      $('.loader').hide()
     },
     method: 'POST',
     url: config.apiUrl + '/sign-in',

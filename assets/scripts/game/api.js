@@ -48,8 +48,22 @@ const startGame = function (data) {
     }
   })
 }
+
+const gameHistory = function (data) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games',
+    data: {},
+    // Include the token received upon sign-in as
+    // authorization
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 module.exports = {
   startGame,
   updateGame,
+  gameHistory,
   squareClick
 }

@@ -94,8 +94,16 @@ const onUpdateGame = function (index, value, over) {
     .catch(ui.updateGameFailure)
 }
 
+const onHistory = function (event) {
+  event.preventDefault()
+  api.gameHistory(event)
+    .then(ui.gameHistorySuccess)
+    .catch(ui.gameHistoryFailure)
+}
+
 module.exports = {
   onUpdateGame,
   onSquareClick,
+  onHistory,
   onStartGame
 }

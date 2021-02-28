@@ -52,10 +52,15 @@ const onSettings = function (event) {
   display.form5()
 }
 
+const onBack = function () {
+  $('.game-history').text('')
+  display.form4()
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onSettings,
+  onBack,
   onChangePassword
 }
